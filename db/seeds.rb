@@ -1,0 +1,5 @@
+Activity.create(activity_name: "Basketball")
+Activity.create(activity_name: "Football")
+Activity.create(activity_name: "Running")
+Activity.create(activity_name: "Sleeping")
+Activity.create(activity_name: "Ice Skating")
