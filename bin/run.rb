@@ -32,17 +32,35 @@ while true
     weather_match = Weather.find_by(icon: icon)
     weather_activities = weather_match.activities.map {|activity| activity.activity_name}
 
-    puts "The time is: "
-    puts time
-    puts ("The Weather is: " + summary)
+    #table = Terminal::Table.new :headings => ['Word', 'Number'], :rows => rows
+    table = Terminal::Table.new :style => {:width => 80} do |t|
+      t.add_row ["The time is "]
+      t.add_row [time.to_s]
+      t.add_row ["The Weather is "]
+      t.add_row [summary]
+      t.style = {:all_separators => true}
+    end
+    table.align_column(0, :center)
+
+    puts table
+
     if weather_activities.empty?
       puts "You have no activities for today's weather! Please add some more activities!"
       puts
     else
-      puts ("Here are some activities you can do today!")
-      puts weather_activities
-      puts "Have fun!"
-      puts
+      activity_table = Terminal::Table.new :style => {:width => 80} do |t|
+        t.add_row ["Here are some activities you can do today!"]
+        weather_activities.each do |weather_activity|
+          t.add_row [weather_activity]
+        end
+        t.add_row ["Have fun!"]
+        t.style = {:all_separators => true}
+      end
+
+      activity_table.align_column(0, :center)
+
+      puts activity_table
+
     end
   else
     puts "Quitting"
