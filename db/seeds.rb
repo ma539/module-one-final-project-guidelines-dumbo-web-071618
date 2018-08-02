@@ -3,3 +3,18 @@ Activity.create(activity_name: "Football")
 Activity.create(activity_name: "Running")
 Activity.create(activity_name: "Sleeping")
 Activity.create(activity_name: "Ice Skating")
+
+# WeatherActivity.create()
+
+Weather.create(time: , summary: , icon: )
+Weather.create(time: , summary: , icon: )
+Weather.create(time: , summary: , icon: )
+Weather.create(time: , summary: , icon: )
+Weather.create(time: , summary: , icon: )
+Weather.create(time: , summary: , icon: )
+
+WeatherActivity.create(weather_id: , activity_id: )
+WeatherActivity.create(weather_id: , activity_id: )
+WeatherActivity.create(weather_id: , activity_id: )
+WeatherActivity.create(weather_id: , activity_id: )
+WeatherActivity.create(weather_id: , activity_id: )
