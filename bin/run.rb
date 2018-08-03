@@ -1,6 +1,7 @@
 require_relative '../config/environment'
 
 while true
+
   options = ["1. Add new activity?", "2. Delete an activity", "3. Show current weather and activities", "4. Quit"]
   prompt = TTY::Prompt.new
 
@@ -15,9 +16,6 @@ while true
 
     WeatherActivity.create(weather_id: weather_input_id, activity_id: created_activity_id)
 
-    # ask user to select pre defined weather
-    # then create weather activity and get the index of the selected weather and put all of the information on
-    # the weather activity
   elsif response[0] == "2"
     activity_to_delete = prompt.select("Please select the activity for deletion: ", Activity.all.map {|activity| activity.activity_name})
     activity_id_to_delete = Activity.find_by(activity_name: activity_to_delete).id
@@ -32,8 +30,7 @@ while true
     weather_match = Weather.find_by(icon: icon)
     weather_activities = weather_match.activities.map {|activity| activity.activity_name}
 
-    #table = Terminal::Table.new :headings => ['Word', 'Number'], :rows => rows
-    table = Terminal::Table.new :style => {:width => 80} do |t|
+    table = Terminal::Table.new :style => {:width => 60} do |t|
       t.add_row ["The time is "]
       t.add_row [time.to_s]
       t.add_row ["The Weather is "]
@@ -42,13 +39,32 @@ while true
     end
     table.align_column(0, :center)
 
+    # Determine what weather it is needs to be integrated
+    # fetch the data from Ascii Weather art
+
+    icon_art = AsciiWeatherArt.new.sunny
+
+    icon_table = Terminal::Table.new :style => {:width => 60} do |t|
+      icon_art.each do |art_line|
+        t.add_row [art_line]
+      end
+    end
+    icon_table.align_column(0, :center)
+
+
+    system("clear")
+
+
     puts table
+    puts
+    puts icon_table
+    puts
 
     if weather_activities.empty?
       puts "You have no activities for today's weather! Please add some more activities!"
       puts
     else
-      activity_table = Terminal::Table.new :style => {:width => 80} do |t|
+      activity_table = Terminal::Table.new :style => {:width => 60} do |t|
         t.add_row ["Here are some activities you can do today!"]
         weather_activities.each do |weather_activity|
           t.add_row [weather_activity]
@@ -60,7 +76,6 @@ while true
       activity_table.align_column(0, :center)
 
       puts activity_table
-
     end
   else
     puts "Quitting"
