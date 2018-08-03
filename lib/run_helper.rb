@@ -31,11 +31,11 @@ class RunHelper
   end
 
   def build_weather_icon_table(icon)
-    if icon == "clear-day" || icon == "partly-cloudy-day"
+    if icon == "clear-day" || icon == "clear-night"
       #call method to print the correposinding AsciiWeatherArt.sunny
       icon_art = AsciiWeatherArt.new.sunny
       create_table_for_icon(icon_art)
-    elsif icon == "cloudy" || icon == "clear-night" || icon == "partly-cloudy-night" || icon == "fog"
+    elsif icon == "cloudy" || icon == "partly-cloudy-night" || icon == "fog" || icon == "partly-cloudy-day"
       #call method to print for cloudy
       icon_art = AsciiWeatherArt.new.cloudy
       create_table_for_icon(icon_art)
