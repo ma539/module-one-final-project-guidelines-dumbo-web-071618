@@ -44,11 +44,14 @@ All of the gems necessary are present within the Gemfile.  Please run bundle ins
 
 
 # Presentation
-     - Describe something you struggled to build, and show us how you ultimately implemented it in your code.
-Something we struggled to build was the interaction with our database because we were struggling to conceptualize our design.  Initially we were going to build out a more complex application, but based on time constraints, decided to readjust our application design and functionality to something more manageable. How we ultimately implemented our user interactions in our code is through a simple interface.  There is a run_helper file which we used to help clean up our run.rb file with helper methods.  There is also another ascii_weather_art file under our lib folder which handles the functionality to provide some ASCII symbols for the corresponding weather icon.
-     - Discuss 3 things you learned in the process of working on this project.
-     1) We learned how to utilize ActiveRecord and its functionalities in our very own CLI program.
-     2) We learned how to build a Command Line Interface which our users could utilize.
-     3) We learned how to conceptualize an idea, create a user story, and build out an application.
-     - Address, if anything, what you would change or add to what you have today?
-     Some features we would have liked to be included (perhaps good ideas for adding features) were usernames and authentication, a functionality to change the location, and a functionality to recommend nearby locations for the given activity (using some sort of API from Yelp, etc.).  Also improving on the design/interface and adding color.
+### Describe something you struggled to build, and show us how you ultimately implemented it in your code.
+* Something we struggled to build was the interaction with our database because we were struggling to conceptualize our design.    
+* Initially we were going to build out a more complex application, but based on time constraints, decided to readjust our application design and functionality to something more manageable. How we ultimately implemented our user interactions in our code is through a simple interface.  
+* There is a run_helper file which we used to help clean up our run.rb file with helper methods.  
+* There is also another ascii_weather_art file under our lib folder which handles the functionality to provide some ASCII symbols for the corresponding weather icon.
+### Discuss 3 things you learned in the process of working on this project.
+1. We learned how to utilize ActiveRecord and its functionalities in our very own CLI program.
+2. We learned how to build a Command Line Interface which our users could utilize.
+3. We learned how to conceptualize an idea, create a user story, and build out an application.
+### Address, if anything, what you would change or add to what you have today?
+* Some features we would have liked to be included (perhaps good ideas for adding features) were usernames and authentication, a functionality to change the location, and a functionality to recommend nearby locations for the given activity (using some sort of API from Yelp, etc.).  Also improving on the design/interface and adding color.
