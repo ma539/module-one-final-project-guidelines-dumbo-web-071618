@@ -3,7 +3,7 @@ require 'date'
 class RunHelper
 
   def dark_sky_weather_api_call
-    url = "https://api.darksky.net/forecast/3ffe575babdc2ba70c85baf2d0290436/40.7128,-74.0060?exclude=minutely,hourly,daily,alerts,flags"
+    url = "https://api.darksky.net/forecast/40.7128,-74.0060?exclude=minutely,hourly,daily,alerts,flags"
     # Latitude and longitude coordinates are: 40.730610, -73.935242.
 
     response = RestClient::Request.execute(
