@@ -30,5 +30,42 @@ class RunHelper
   def delete_activity
   end
 
+  def build_weather_icon_table(icon)
+    if icon == "clear-day" || icon == "partly-cloudy-day"
+      #call method to print the correposinding AsciiWeatherArt.sunny
+      icon_art = AsciiWeatherArt.new.sunny
+      create_table_for_icon(icon_art)
+    elsif icon == "cloudy" || icon == "clear-night" || icon == "partly-cloudy-night" || icon == "fog"
+      #call method to print for cloudy
+      icon_art = AsciiWeatherArt.new.cloudy
+      create_table_for_icon(icon_art)
+    elsif icon == "rain" || icon == "wind"
+      #call method to print for rainy
+      icon_art = AsciiWeatherArt.new.rainy
+      create_table_for_icon(icon_art)
+    elsif icon == "snow" || icon == "hail"
+      #call method '' '' snowy
+      icon_art = AsciiWeatherArt.new.snowy
+      create_table_for_icon(icon_art)
+    elsif icon == "sleet"
+      #call method extreme
+      icon_art = AsciiWeatherArt.new.extreme
+      create_table_for_icon(icon_art)
+    else
+      #call method stormy
+      icon_art = AsciiWeatherArt.new.stormy
+      create_table_for_icon(icon_art)
+    end
+  end
+
+  def create_table_for_icon(ascii_art)
+    icon_table = Terminal::Table.new :style => {:width => 60} do |t|
+      ascii_art.each do |art_line|
+        t.add_row [art_line]
+      end
+    end
+    icon_table.align_column(0, :center)
+    icon_table
+  end
 
 end

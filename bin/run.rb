@@ -40,20 +40,10 @@ while true
     table.align_column(0, :center)
 
     # Determine what weather it is needs to be integrated
-    # fetch the data from Ascii Weather art
-
-    icon_art = AsciiWeatherArt.new.sunny
-
-    icon_table = Terminal::Table.new :style => {:width => 60} do |t|
-      icon_art.each do |art_line|
-        t.add_row [art_line]
-      end
-    end
-    icon_table.align_column(0, :center)
-
+    icon_create_table = RunHelper.new
+    icon_table = icon_create_table.build_weather_icon_table(weather_match.icon)
 
     system("clear")
-
 
     puts table
     puts
