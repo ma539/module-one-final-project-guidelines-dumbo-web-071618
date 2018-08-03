@@ -31,19 +31,24 @@ Projects need to be approved prior to launching into them, so take some time to 
 * As a user, I should be able to reject a suggestion and not see that restaurant suggestion again
 * As a user, I want to be able to save to and retrieve a list of favorite restaurant suggestions
 
-## Instructions
+## Description:  
+The following CLI (Command Line Interface) application was built for the purpose of recommending activities based on the current weather.  Currently the user can create, read, update and delete from the "activities" table and the corresponding join table "weather_activities".  This project utilizes the functionalities present in ActiveRecord.  Utilizing the Dark Sky Weather API, we obtain the current weather and display the list of activities the user can do based on this weather.  
 
-1. Fork and clone this repository.
-2. Build your application. Make sure to commit early and commit often. Commit messages should be meaningful (clearly describe what you're doing in the commit) and accurate (there should be nothing in the commit that doesn't match the description in the commit message). Good rule of thumb is to commit every 3-7 mins of actual coding time. Most of your commits should have under 15 lines of code and a 2 line commit is perfectly acceptable.
-3. Make sure to create a good README.md with a short description, install instructions, a contributors guide and a link to the license for your code.
-4. Make sure your project checks off each of the above requirements.
-5. Prepare a video demo (narration helps!) describing how a user would interact with your working project.
-    * The video should:
-      - Have an overview of your project.(2 minutes max)
-6. Prepare a presentation to follow your video.(3 minutes max)
-    * Your presentation should:
-      - Describe something you struggled to build, and show us how you ultimately implemented it in your code.
-      - Discuss 3 things you learned in the process of working on this project.
-      - Address, if anything, what you would change or add to what you have today?
-      - Present any code you would like to highlight.   
-7. *OPTIONAL, BUT RECOMMENDED*: Write a blog post about the project and process.
+##Install instructions:
+All of the gems necessary are present within the Gemfile.  Please run bundle install, and then create and seed the database using rake db:migrate and rake db:seed.  
+
+##Contributor's Guide
+
+
+##License
+
+
+# Presentation
+     - Describe something you struggled to build, and show us how you ultimately implemented it in your code.
+Something we struggled to build was the interaction with our database because we were struggling to conceptualize our design.  Initially we were going to build out a more complex application, but based on time constraints, decided to readjust our application design and functionality to something more manageable. How we ultimately implemented our user interactions in our code is through a simple interface.  There is a run_helper file which we used to help clean up our run.rb file with helper methods.  There is also another ascii_weather_art file under our lib folder which handles the functionality to provide some ASCII symbols for the corresponding weather icon.
+     - Discuss 3 things you learned in the process of working on this project.
+     1) We learned how to utilize ActiveRecord and its functionalities in our very own CLI program.
+     2) We learned how to build a Command Line Interface which our users could utilize.
+     3) We learned how to conceptualize an idea, create a user story, and build out an application.
+     - Address, if anything, what you would change or add to what you have today?
+     Some features we would have liked to be included (perhaps good ideas for adding features) were usernames and authentication, a functionality to change the location, and a functionality to recommend nearby locations for the given activity (using some sort of API from Yelp, etc.).  Also improving on the design/interface and adding color.

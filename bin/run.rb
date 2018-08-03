@@ -39,7 +39,6 @@ while true
     end
     table.align_column(0, :center)
 
-    # Determine what weather it is needs to be integrated
     icon_create_table = RunHelper.new
     icon_table = icon_create_table.build_weather_icon_table(weather_match.icon)
 
