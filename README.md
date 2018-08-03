@@ -54,4 +54,5 @@ All of the gems necessary are present within the Gemfile.  Please run bundle ins
 2. We learned how to build a Command Line Interface which our users could utilize.
 3. We learned how to conceptualize an idea, create a user story, and build out an application.
 ### Address, if anything, what you would change or add to what you have today?
-* Some features we would have liked to be included (perhaps good ideas for adding features) were usernames and authentication, a functionality to change the location, and a functionality to recommend nearby locations for the given activity (using some sort of API from Yelp, etc.).  Also improving on the design/interface and adding color.
+* Some features we would have liked to be included (perhaps good ideas for adding features) were usernames and authentication, a functionality to change the location, and a functionality to recommend nearby locations for the given activity (using some sort of API from Yelp, etc.). 1
+ Also improving on the design/interface and adding color.

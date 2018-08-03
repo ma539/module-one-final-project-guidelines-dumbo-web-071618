@@ -16,11 +16,14 @@ while true
 
     WeatherActivity.create(weather_id: weather_input_id, activity_id: created_activity_id)
 
+
   elsif response[0] == "2"
     activity_to_delete = prompt.select("Please select the activity for deletion: ", Activity.all.map {|activity| activity.activity_name})
     activity_id_to_delete = Activity.find_by(activity_name: activity_to_delete).id
     Activity.delete_all(id: activity_id_to_delete)
     WeatherActivity.delete_all(activity_id: activity_id_to_delete)
+    system("clear")
+    puts "#{activity_to_delete} has been TERMINATED"
 
   elsif response[0] == "3"
     weather_api_call = RunHelper.new
